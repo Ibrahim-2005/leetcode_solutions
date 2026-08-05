@@ -3,9 +3,8 @@ class Solution(object):
         lookup={}
         for i in strs:
             s="".join(sorted(i))
-            if s in lookup:
-                lookup[s]+=[i]
-            else:
-                lookup[s]=[i]
+            if s not in lookup:
+                lookup[s]=[]
+            lookup[s].append(i)
         return list(lookup.values())
         
