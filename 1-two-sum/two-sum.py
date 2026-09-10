@@ -1,10 +1,14 @@
 class Solution(object):
     def twoSum(self, nums, target):
-        h={}
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        hash={}
         for i in range(len(nums)):
-            if nums[i] in h:
-                return (h[nums[i]],i)
+            if target-nums[i] not in hash:
+                hash[nums[i]]=i
             else:
-                h[target-nums[i]]=i
-
-                
+                return (i,hash[target-nums[i]])
+        
