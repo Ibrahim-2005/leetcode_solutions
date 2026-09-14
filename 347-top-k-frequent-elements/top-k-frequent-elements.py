@@ -1,8 +1,9 @@
 from collections import Counter
 class Solution(object):
     def topKFrequent(self, nums, k):
-        sorted_dict=(sorted(Counter(nums).items(), key=lambda item: item[1],reverse=True))
+        count=Counter(nums)
+        result_dict=(sorted(count.items(), key=lambda item:item[1],reverse=True))
         result=[]
         for i in range(k):
-            result.append(sorted_dict[i][0])
+            result.append(result_dict[i][0])
         return result
